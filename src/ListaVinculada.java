@@ -13,8 +13,8 @@ public class ListaVinculada<T> implements Iterable<T>{
 		this.orden=orden;
 	}
 
-	public void InsertarOrdenado(Object obj) {
-		Nodo nuevo= new Nodo(obj);
+	public void InsertarOrdenado(T valor) {
+		Nodo nuevo= new Nodo(valor);
 		if(estaVacia()) {
 			cabeza = nuevo;
 		}else {
@@ -118,9 +118,9 @@ public class ListaVinculada<T> implements Iterable<T>{
 //	}
 	
 	private class IteradorNodo implements Iterator<T>{
-		private Nodo nodo;
+		private Nodo<T> nodo;
 		
-		public IteradorNodo(Nodo n) {
+		public IteradorNodo(Nodo<T> n) {
 			this.nodo=n;
 		}
 		@Override
@@ -130,7 +130,7 @@ public class ListaVinculada<T> implements Iterable<T>{
 		
 		@Override
 		public T next() {
-			T valor=(T) nodo.obtenerValor();
+			T valor= nodo.obtenerValor();
 			nodo = nodo.obtenerSiguiente();
 			return valor; 
 		}
