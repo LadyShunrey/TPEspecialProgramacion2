@@ -1,11 +1,11 @@
 
 
-public class Nodo  {
-	Object valor;
-	Nodo siguiente;  
+public class Nodo<T>  {
+	private T valor;
+	private Nodo siguiente;  
 	
 	
-	public Nodo (Object valor) {
+	public Nodo (T valor) {
 		this.valor=valor;
 	}
 	
@@ -17,7 +17,7 @@ public class Nodo  {
 		return siguiente;
 	}
 	
-	public Object obtenerValor() {
+	public T obtenerValor() {
 		return valor;
 	}
 
